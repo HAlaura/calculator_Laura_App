@@ -9,7 +9,8 @@ const addition = document.getElementById("addition");
 const multiplication = document.getElementById("multiplication");
 const division = document.getElementById("division");
 const subtraction = document.getElementById("subtraction");
-const clearOne = document.getElementById("clear-one");
+const clear = document.getElementById("clear");
+const clearOne = document.getElementById("clearOne");
 const equal = document.getElementById("equal");
 const display = document.getElementById("display");
 
@@ -46,11 +47,7 @@ subtraction.addEventListener("click", function (event) {
   operator = event.target.innerText;
   display.innerText = `${num1} ${operator} ${num2}`;
 });
-clearOne.addEventListener("click", function (event) {
-  isOperatorSelected = true;
-  num1= event.target.innerText;
-  display.innerText = String.subtraction(0, String.length-1);
-});
+
 
 
 function clearDisplay() {
@@ -77,18 +74,8 @@ equal.addEventListener("click", function (event) {
 
     } else if (operator === "-") {
     display.innerText = parseInt(num1) - parseInt(num2);
-
     }
-    // else if (operator === "&#8592;") {
-    //   num1.innerText = String.subtraction(0, String.length-1);
-  
-    //   }
-    else if (operator.innerText === "&#8592;") {
-      inputValue.innerText = inputValue.innerText.substring(0,inputValue.innerText.length - 1);
-      if (inputValue.innerText.length == 0) {
-          inputValue.innerText = 0;
-      }
-});
+  });
 
 
 // clearOne.clearDisplay("click", function () {
@@ -104,7 +91,21 @@ equal.addEventListener("click", function (event) {
 //     num1 = newNum.join("");
 //   }
 // });
+clearOne.addEventListener("click", function() {
+    if (num2. length) {
+  num2 = num2.slice(0,-1); 
+}
+  else if (operator.length) {
+  
+  operator = ""; 
+  isOperatorSelected = false;
+}
 
+  else if (num1. length) {
+  num1 = num1.slice(0, -1);
+  }
+  display.innerText = `${num1} ${operator} ${num2}`;
 
+});
 
 
